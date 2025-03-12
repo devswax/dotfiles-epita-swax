@@ -48,7 +48,7 @@ if [[ $TERM = "xterm-kitty" ]]; then
     bind 'TAB:menu-complete'
 
     # search in history (zsh like)
-    bind '"\e[A": history-search-backward
+    bind '"\e[A": history-search-backward'
     bind '"\e[B": history-search-forward'
 
     export HISTSIZE=1000
