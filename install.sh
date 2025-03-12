@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dot_list="bashrc config emacs gitconfig gitignore jnewsrc mozilla msmtprc muttrc signature slrnrc ssh thunderbird vim vimrc Xdefaults"
+dot_list="bashrc starship.toml config kitty ssh emacs gitconfig gitignore jnewsrc mozilla msmtprc muttrc signature slrnrc thunderbird vim vimrc Xdefaults"
 
 for f in $dot_list; do
   rm -rf "$HOME/.$f"
@@ -13,7 +13,6 @@ while IFS= read -r line; do
     nix profile install "nixpkgs#$line"
 done < packages.txt
 nix profile install --impure --expr 'with builtins.getFlake("flake:nixpkgs"); legacyPackages.x86_64-linux.nerdfonts.override { fonts = ["JetBrainsMono"]; }'
-
 
 CURSOR_PATH=~/.local/share/icons
 if ! test -d $CURSOR_PATH/rose; then
