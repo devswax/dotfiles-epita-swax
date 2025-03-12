@@ -1,0 +1,58 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Timeout for commands executed by starship
+command_timeout = 500
+right_format = '$cmd_duration'
+
+[cmd_duration]
+min_time = 2000
+format = 'in [$duration]($style)'
+style = '#95aad5'
+
+[character]
+success_symbol = '[➜](bold #95aad5)' # #8abdb6
+error_symbol = '[➜](bold #B6090A)'
+
+[username]
+# style_user = '#938c9c'
+# style_root = '#938c9c'
+style_user = 'bold #95aad5'
+style_root = '#95aad5'
+format = '(#95aad5)[$user]($style) '
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[$hostname](bold #95aad5) '
+disabled = true
+
+[directory]
+home_symbol = '~'
+read_only_style = '137'
+read_only = '  '
+format = '  [$path/]($style)[$read_only]($read_only_style) '
+style = 'bold white'
+
+[git_branch]
+symbol = ' '
+format = '[$symbol$branch]($style) '
+style = '#e94d32'
+
+[git_status]
+format = '[- $all_status$ahead_behind]($style) '
+style = 'bold #e94d32'
+conflicted = '🏳'
+up_to_date = ' '
+untracked = ' '
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+modified = ' '
+staged = '[++\($count\)](#e94d32)'
+deleted = ' '
+

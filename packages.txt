@@ -6,7 +6,6 @@ hyprpaper
 xdg-desktop-portal-hyprland
 waybar
 wofi
-fish
 kitty
 starship
 lsd
@@ -17,3 +16,6 @@ playerctl
 bluez
 python312
 mako
+gtk3
+gtk4
+starship
