@@ -27,7 +27,7 @@
     "modules-right": ["clock", "group/group-applets"],
     // Modules configuration
 	"clock": {
-    "format": "{:%I:%M:%S}",
+    "format": "{:%H:%M:%S}",
     "interval": 1,
     "tooltip": "false",
     "format-alt": "{:%d/%m/%Y}",
@@ -77,7 +77,7 @@
 //		"default": "󰧞"
 	},
        "persistent-workspaces": {
-             "*": 4
+             "*": 8
        }
 },
 
@@ -170,10 +170,10 @@
 
 	"network": {
         	"format-wifi": "󰤨",
-        	"format-ethernet": " {ifname}",
-        	"format-linked": " {ifname} (No IP)",
+        	"format-ethernet": "󰈀",
+        	"format-linked": "󰈀",
         	"format-disconnected": "󰤭",
-        	"format-alt": " {ifname}: {ipaddr}/{cidr}",
+        	"format-alt": "󰈀: {ipaddr}/{cidr}",
           "tooltip-format": "{essid}",
           "on-click-right": "python ~/.config/rofi/network/network.py",
 	},
@@ -233,8 +233,8 @@
 		"format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾"]
 		},
-		"on-click": "pamixer -t",
-		"on-click-right": "bash ~/.config/rofi/applets/bin/volume.sh --row 3",
+		"on-click": "",
+		"on-click-right": "pavucontrol",
     "tooltip-format": "{volume}%"
   },
   "custom/randwall": {
@@ -243,7 +243,7 @@
     "on-click-right": "nemo ~/Wallpapers"
   },
   "custom/launcher": {
-    "format": "",
+    "format": " ",
     "on-click": "exec wofi",
     "on-click-right": "exec wofi"
   },
@@ -266,14 +266,14 @@
   
   "custom/screenshot_t":{
         "format":"",
-        "on-click": "~/.config/hypr/scripts/screenshot_full",
-        "on-click-right":"~/.config/hypr/scripts/screenshot_area"
+        "on-click": "flameshot gui",
+        "on-click-right":"flameshot gui"
     },
     
   "custom/power": {
         "format": " 󰐥 ",
         "tooltip": false,
-        "on-click": "wlogout"
+        "on-click": "shutdown now"
     },
 
   "group/group-applets": {

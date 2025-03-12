@@ -21,3 +21,5 @@ gtk4
 starship
 nautilus
 flameshot
+fastfetch
+
