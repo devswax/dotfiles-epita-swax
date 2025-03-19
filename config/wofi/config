@@ -1,9 +1,3 @@
-# (C) 2023 Kedislav - File under GNU GPL v3.0
-# MODIFIED BY LAGGY-TUX (github.com/laggy-tux)
-#////////////////////////////////////////////////////////////////
-# Custom scripts are saved in the "scripts" directory.
-# Styling can be found in the "style.css" file.
-#////////////////////////////////////////////////////////////////
 
 width=300
 height=600
