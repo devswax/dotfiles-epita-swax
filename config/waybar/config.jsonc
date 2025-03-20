@@ -17,7 +17,7 @@
     "interval": 1,
     "tooltip": "false",
     "format-alt": "{:%d/%m/%Y}",
-    "on-click-right": "bash ~/.config/rofi/calendar/calendar.sh"
+    "on-click-right": ""
 },
 
 	
@@ -169,8 +169,8 @@
   "format-off": "󰂲",
   "format-connected": "󰂱",
   "format-disabled": "󰂲",
-  "on-click": "bash ~/.config/waybar/scripts/bluetooth.sh",
-  "on-click-right": "bash ~/.config/waybar/scripts/bluetoggle.sh",
+  "on-click": "blueman-manager",
+  "on-click-right": "blueman-manager",
 	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
 	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
@@ -219,7 +219,7 @@
 		"format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾"]
 		},
-		"on-click": "",
+		"on-click": "pavucontrol",
 		"on-click-right": "pavucontrol",
     "tooltip-format": "{volume}%"
   },
