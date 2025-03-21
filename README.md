@@ -63,4 +63,4 @@ cp -r /afs/cri.epita.fr/resources/confs/* afs/.confs/
 ```
 ### Step 1: Switch to i3
 - Change your TTY (i.e., `tty2` with `Ctrl + Alt + F2`).
-- Log in to your **Forge ID** account.
+- Log in again using your **Forge ID** account.
