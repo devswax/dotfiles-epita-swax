@@ -17,8 +17,8 @@ python312
 mako
 gtk3
 gtk4
-starship
 nautilus
 flameshot
 fastfetch
 spotify
+

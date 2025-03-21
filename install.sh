@@ -25,4 +25,5 @@ fi
 USER_NAME=$(basename $HOME)
 sed -i "s|/home/user.name|/home/$USER_NAME|g" ~/afs/.confs/config/gtk-3.0/bookmarks
 
-echo "Welcome to the Swax config!"
+cd "$HOME"
+exec Hyprland
