@@ -61,6 +61,6 @@ If you want to erase the configuration do:
 rm -rf afs/.confs/*
 cp -r /afs/cri.epita.fr/resources/confs/* afs/.confs/
 ```
-### Step 1: Switch to i3
+### Step 3: Switch to i3
 - Change your TTY (i.e., `tty2` with `Ctrl + Alt + F2`).
 - Log in again using your **Forge ID** account.
