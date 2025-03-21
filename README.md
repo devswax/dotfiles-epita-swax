@@ -46,3 +46,21 @@ cd afs/.confs/
 ./install.sh
 ```
 
+---
+
+## ❌​ Reset
+
+If you want to erase the configuration do:
+
+### Step 1: Switch to a TTY (You must not be logged into i3!)
+- Change your TTY (e.g., `tty1` with `Ctrl + Alt + F1`).
+- Log in to your **Forge ID** account.
+
+### Step 2: Reset the Configuration
+```sh
+rm -rf afs/.confs/*
+cp -r /afs/cri.epita.fr/resources/confs/* afs/.confs/
+```
+### Step 1: Switch to i3
+- Change your TTY (i.e., `tty2` with `Ctrl + Alt + F2`).
+- Log in to your **Forge ID** account.
