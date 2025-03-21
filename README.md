@@ -68,7 +68,7 @@ cp -r /afs/cri.epita.fr/resources/confs/* afs/.confs/
 
 ---
 
-## 📸 Preview
+## 📸 Preview (I'm on my laptop, so on the PC at EPITA you won't have: the Arch logo (replaced by the NixOS logo), a few Waybar buttons (for light screen and battery), and the mute key for sound.)
 ![image](https://github.com/user-attachments/assets/d9f397a9-18df-4257-9ea5-b398a0da6e46)
 ![image](https://github.com/user-attachments/assets/02c07110-d331-4b3e-9b7e-e41dbfe17e91)
 ![image](https://github.com/user-attachments/assets/597973fb-d662-4558-a354-e424d8c11621)
