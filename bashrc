@@ -30,48 +30,49 @@ alias ls='ls --color=auto'
 alias grep='grep --color -n'
 PS1='[\u@\h \W]\$ '
 
-packages=(
-  nixpkgs#zsh
-  nixpkgs#hyprland
-  nixpkgs#hypridle
-  nixpkgs#hyprlock
-  nixpkgs#hyprpaper
-  nixpkgs#xdg-desktop-portal-hyprland
-  nixpkgs#waybar
-  nixpkgs#wofi
-  nixpkgs#kitty
-  nixpkgs#starship
-  nixpkgs#lsd
-  nixpkgs#xwayland
-  nixpkgs#neovim
-  nixpkgs#playerctl
-  nixpkgs#bluez
-  nixpkgs#python312
-  nixpkgs#mako
-  nixpkgs#gtk3
-  nixpkgs#gtk4
-  nixpkgs#nautilus
-  nixpkgs#fastfetch
-)
+if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
+    packages=(
+        nixpkgs#zsh
+        nixpkgs#hyprland
+        nixpkgs#hypridle
+        nixpkgs#hyprlock
+        nixpkgs#hyprpaper
+        nixpkgs#xdg-desktop-portal-hyprland
+        nixpkgs#waybar
+        nixpkgs#wofi
+        nixpkgs#kitty
+        nixpkgs#starship
+        nixpkgs#lsd
+        nixpkgs#xwayland
+        nixpkgs#neovim
+        nixpkgs#playerctl
+        nixpkgs#bluez
+        nixpkgs#python312
+        nixpkgs#mako
+        nixpkgs#gtk3
+        nixpkgs#gtk4
+        nixpkgs#nautilus
+        nixpkgs#fastfetch
+    )
 
-nix profile install --impure ${packages[@]}
+    nix profile install --impure "${packages[0]}"
+    nix profile install --impure --expr 'with builtins.getFlake("flake:nixpkgs"); legacyPackages.x86_64-linux.nerdfonts.override { fonts = ["JetBrainsMono" "Iosevka"]; }'
 
-nix profile install --impure --expr 'with builtins.getFlake("flake:nixpkgs"); legacyPackages.x86_64-linux.nerdfonts.override { fonts = ["JetBrainsMono" "Iosevka"]; }'
+    if which zsh; then
+        export SHELL="$(which zsh)"
+    fi
 
-if which zsh; then
-      export SHELL="$(which zsh)"
+    CURSOR_PATH=~/.local/share/icons
+    if ! test -d "$CURSOR_PATH/rose"; then
+        echo "Installing custom cursor..."
+        mkdir -p "$CURSOR_PATH"
+        git clone https://github.com/ndom91/rose-pine-hyprcursor.git "$CURSOR_PATH/rose"
+    fi
+
+    # check your user.name for changes in the bookmarks
+    USER_NAME=$(basename "$HOME")
+    sed -i "s|/home/user.name|/home/$USER_NAME|g" ~/afs/.confs/config/gtk-3.0/bookmarks
+
+    exec Hyprland || logout
 fi
-
-CURSOR_PATH=~/.local/share/icons
-if ! test -d $CURSOR_PATH/rose; then
-    echo "Installing custom cursor..."
-    mkdir -p $CURSOR_PATH
-    git clone https://github.com/ndom91/rose-pine-hyprcursor.git $CURSOR_PATH/rose
-fi
-
-#check your user.name for changes in the bookmarks
-USER_NAME=$(basename $HOME)
-sed -i "s|/home/user.name|/home/$USER_NAME|g" ~/afs/.confs/config/gtk-3.0/bookmarks
-
-Hyprland
 
