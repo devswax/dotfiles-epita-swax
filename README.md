@@ -56,8 +56,8 @@ If you want to erase the configuration do:
 
 ### Step 2: Reset the Configuration
 ```sh
-rm -rf afs/.confs/*
-cp -r /afs/cri.epita.fr/resources/confs/* afs/.confs/
+rm -rf ~/afs/.confs/*
+cp -r /afs/cri.epita.fr/resources/confs/* ~/afs/.confs/
 ```
 ### Step 3: Switch to i3
 - Change your TTY (i.e., `tty2` with `Ctrl + Alt + F2`).
