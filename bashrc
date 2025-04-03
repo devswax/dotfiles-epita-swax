@@ -30,35 +30,48 @@ alias ls='ls --color=auto'
 alias grep='grep --color -n'
 PS1='[\u@\h \W]\$ '
 
-if [[ $TERM = "xterm-kitty" ]]; then
-    # Enable the subsequent settings only in interactive sessions
-    case $- in
-    *i*) ;;
-    *) return ;;
-    esac
+packages=(
+  nixpkgs#zsh
+  nixpkgs#hyprland
+  nixpkgs#hypridle
+  nixpkgs#hyprlock
+  nixpkgs#hyprpaper
+  nixpkgs#xdg-desktop-portal-hyprland
+  nixpkgs#waybar
+  nixpkgs#wofi
+  nixpkgs#kitty
+  nixpkgs#starship
+  nixpkgs#lsd
+  nixpkgs#xwayland
+  nixpkgs#neovim
+  nixpkgs#playerctl
+  nixpkgs#bluez
+  nixpkgs#python312
+  nixpkgs#mako
+  nixpkgs#gtk3
+  nixpkgs#gtk4
+  nixpkgs#nautilus
+  nixpkgs#fastfetch
+)
 
-    # Preferred editor for local and remote sessions
-    if [[ -n $SSH_CONNECTION ]]; then
-        export EDITOR='vim'
-    else
-        export EDITOR='nvim'
-    fi
+nix profile install --impure ${packages[@]}
 
-    # set the tab completion cycle as zsh
-    bind 'TAB:menu-complete'
+nix profile install --impure --expr 'with builtins.getFlake("flake:nixpkgs"); legacyPackages.x86_64-linux.nerdfonts.override { fonts = ["JetBrainsMono" "Iosevka"]; }'
 
-    # search in history (zsh like)
-    bind '"\e[A": history-search-backward'
-    bind '"\e[B": history-search-forward'
-
-    export HISTSIZE=1000
-    export HISTFILESIZE=2000
-
-    # SDL
-    export SDL_VIDEODRIVER="wayland,x11"
-
-    # starship
-    export STARSHIP_CONFIG=~/.starship.toml
-
-    eval "$(starship init bash)"
+if which zsh; then
+      export SHELL="$(which zsh)"
 fi
+
+CURSOR_PATH=~/.local/share/icons
+if ! test -d $CURSOR_PATH/rose; then
+    echo "Installing custom cursor..."
+    mkdir -p $CURSOR_PATH
+    git clone https://github.com/ndom91/rose-pine-hyprcursor.git $CURSOR_PATH/rose
+fi
+
+#check your user.name for changes in the bookmarks
+USER_NAME=$(basename $HOME)
+sed -i "s|/home/user.name|/home/$USER_NAME|g" ~/afs/.confs/config/gtk-3.0/bookmarks
+
+Hyprland
+
