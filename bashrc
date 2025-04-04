@@ -55,7 +55,7 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
         nixpkgs#fastfetch
     )
 
-    nix profile install --impure "${packages[0]}"
+    nix profile install --impure "${packages[@]}"
     nix profile install --impure --expr 'with builtins.getFlake("flake:nixpkgs"); legacyPackages.x86_64-linux.nerdfonts.override { fonts = ["JetBrainsMono" "Iosevka"]; }'
 
     if which zsh; then
