@@ -53,6 +53,7 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
         nixpkgs#gtk4
         nixpkgs#nautilus
         nixpkgs#fastfetch
+        nixpkgs#nerd-fonts.iosevka
     )
 
     nix profile install --impure "${packages[@]}"
