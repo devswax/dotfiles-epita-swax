@@ -5,6 +5,18 @@ Follow the instructions below to set it up correctly.
 
 ---
 
+<p align="center">
+  <img src="https://img.shields.io/badge/WM-Hyprland-444444?style=flat-square&logo=linux&logoColor=white" />
+  <img src="https://img.shields.io/badge/OS-NixOS-5277C3?style=flat-square&logo=nixos&logoColor=white" />
+  <img src="https://img.shields.io/badge/Bar-Waybar-444444?style=flat-square&logo=gnome&logoColor=white" />
+  <img src="https://img.shields.io/badge/Shell-zsh-4E9A06?style=flat-square&logo=gnubash&logoColor=white" />
+  <img src="https://img.shields.io/badge/EPITA-Config-0A66C2?style=flat-square&logo=gradle&logoColor=white" />
+  <img src="https://img.shields.io/badge/Language-EN-8A2BE2?style=flat-square&logo=googletranslate&logoColor=white" />
+  <img src="https://img.shields.io/github/last-commit/devswax/dotfiles-epita-swax?style=flat-square&logo=git&logoColor=white&color=brightgreen" />
+</p>
+
+---
+
 ## 🚀 Installation (First Time)
 
 Follow these steps to install the configuration for the first time:
