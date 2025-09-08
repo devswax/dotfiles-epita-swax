@@ -34,7 +34,6 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
     packages=(
         nixpkgs#zsh
         nixpkgs#hyprland
-        nixpkgs#hypridle
         nixpkgs#hyprlock
         nixpkgs#hyprpaper
         nixpkgs#xdg-desktop-portal-hyprland
