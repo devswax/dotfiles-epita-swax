@@ -17,8 +17,9 @@ Follow the instructions below to set it up correctly.
 
 ⚠️ Disclaimer
 This configuration is not officially allowed, since it uses Hyprlock instead of i3lock.
-I made this setup purely for fun and as a personal challenge.
-I am not responsible for what you do with it — I’m just sharing my passion.
+I created it purely for fun and as a personal challenge — I don’t use it myself.
+Personally, I’m on bspwm, which I consider a great alternative.
+I am not responsible for what you do with this setup — I’m just sharing my passion.
 
 ---
 
