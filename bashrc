@@ -30,6 +30,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color -n'
 PS1='[\u@\h \W]\$ '
 
+# this if is only for hyprland (when you are on i3, you don't go in)
+
 if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
     packages=(
         nixpkgs#zsh
@@ -53,10 +55,11 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
         nixpkgs#nautilus
         nixpkgs#fastfetch
         nixpkgs#nerd-fonts.iosevka
+        nixpkgs#nerd-fonts.jetbrains-mono
+        nixpkgs#spotify
     )
 
     nix profile install --impure "${packages[@]}"
-    nix profile install --impure --expr 'with builtins.getFlake("flake:nixpkgs"); legacyPackages.x86_64-linux.nerdfonts.override { fonts = ["JetBrainsMono" "Iosevka"]; }'
 
     if which zsh; then
         export SHELL="$(which zsh)"
