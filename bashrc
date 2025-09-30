@@ -57,6 +57,10 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
         nixpkgs#nerd-fonts.iosevka
         nixpkgs#nerd-fonts.jetbrains-mono
         nixpkgs#spotify
+        nixpkgs#grim
+        nixpkgs#swappy
+        nixpkgs#slurp
+        nixpkgs#wl-clipboard
     )
 
     nix profile install --impure "${packages[@]}"
