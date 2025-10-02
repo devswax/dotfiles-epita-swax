@@ -36,8 +36,8 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
     packages=(
         nixpkgs#zsh
         nixpkgs#hyprland
-        nixpkgs#hyprlock
         nixpkgs#hyprpaper
+        nixpkgs#hyprlock
         nixpkgs#xdg-desktop-portal-hyprland
         nixpkgs#waybar
         nixpkgs#wofi
@@ -79,7 +79,7 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
     # check your user.name for changes in the bookmarks
     USER_NAME=$(basename "$HOME")
     sed -i "s|/home/user.name|/home/$USER_NAME|g" ~/afs/.confs/config/gtk-3.0/bookmarks
-
+  
     exec Hyprland || logout
 fi
 

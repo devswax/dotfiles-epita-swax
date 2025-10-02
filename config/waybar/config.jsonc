@@ -1,4 +1,4 @@
-ƒ// Config Waybar
+// Config Waybar
 
 {
     "position": "top",
@@ -242,7 +242,7 @@
 		"exec-if": "pgrep 'wf-recorder'",
 		"on-click": "exec ./scripts/wlrecord.sh",
 		"signal": 8
-  },
+	},
 
   "custom/hyprpicker": {
     "format": "󰈋",
@@ -251,16 +251,16 @@
   },
   
   "custom/screenshot_t": {
-    "format": "",
-    "on-click": "sh -c 'grim -g \"$(slurp)\" - | swappy -f -'",
-    "on-click-right": "sh -c 'grim -g \"$(slurp)\" - | swappy -f -'"
-  },
-    
+        "format": "",
+        "on-click": "sh -c 'grim -g \"$(slurp)\" - | swappy -f -'",
+        "on-click-right": "sh -c 'grim -g \"$(slurp)\" - | swappy -f -'"
+    },
+
   "custom/power": {
         "format": " 󰐥 ",
         "tooltip": false,
         "on-click": "shutdown now"
-  },
+    },
 
   "group/group-applets": {
     "orientation": "inherit",
