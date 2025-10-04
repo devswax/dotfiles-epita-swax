@@ -1,4 +1,4 @@
-# 🖥️ Hyprland + NixOS Configuration for EPITA by Swax
+# Hyprland + NixOS Configuration for EPITA by Swax
 
 This repository contains my **Hyprland** setup for **NixOS** at EPITA.  
 Follow the instructions below to set it up correctly.
@@ -17,7 +17,7 @@ Follow the instructions below to set it up correctly.
 
 ---
 
-## 🚀 Installation (First Time)
+## Installation (First Time)
 
 Follow these steps to install the configuration for the first time:
 
@@ -43,7 +43,7 @@ bash
 
 ---
 
-## 🔄 Every Boot
+## Every Boot
 
 Each time you reboot, follow these steps to apply the configuration:
 
@@ -58,7 +58,7 @@ bash
 
 ---
 
-## ❌​ Reset
+## Reset
 
 If you want to erase the configuration do:
 
@@ -78,7 +78,48 @@ cp -r /afs/cri.epita.fr/resources/confs/* ~/afs/.confs/
 
 ---
 
-## 📸 Preview
+## Keybindings
+
+### General
+| Shortcut        | Action |
+|-----------------|--------|
+| SUPER + Enter   | Open terminal (kitty) |
+| SUPER + Q       | Close active window |
+| SUPER + M       | Exit Hyprland |
+| SUPER + E       | Open file manager (nautilus) |
+| SUPER + B       | Launch Firefox |
+| SUPER + D       | Application launcher (wofi) |
+| SUPER + V       | Toggle floating mode |
+| SUPER + F       | Fullscreen |
+| SUPER + P       | Enable pseudo-tiling (dwindle) |
+| SUPER + J       | Toggle split (dwindle) |
+| SUPER + L       | Lock session via `~/afs/.confs/hyprlock.sh` (must always be used instead of hyprlock directly) |
+| Print           | Take screenshot (grim + slurp + swappy) |
+
+### Mouse
+| Shortcut                | Action |
+|-------------------------|--------|
+| SUPER + LMB (drag)      | Move window |
+| SUPER + RMB (drag)      | Resize window |
+| SUPER + Scroll ↑ / ↓    | Switch workspace |
+
+### Workspaces
+| Shortcut                | Action |
+|-------------------------|--------|
+| SUPER + [1-9,0]         | Switch to workspace 1-10 |
+| SUPER + SHIFT + [1-9,0] | Move active window to workspace 1-10 |
+| SUPER + S               | Toggle special workspace magic |
+| SUPER + SHIFT + S       | Move active window to special workspace magic |
+
+### Navigation
+| Shortcut                | Action |
+|-------------------------|--------|
+| SUPER + ← / ↑ / ↓ / →   | Move focus between windows |
+
+
+---
+
+## Preview
 ![image](https://github.com/user-attachments/assets/d9f397a9-18df-4257-9ea5-b398a0da6e46)
 ![image](https://github.com/user-attachments/assets/02c07110-d331-4b3e-9b7e-e41dbfe17e91)
 ![image](https://github.com/user-attachments/assets/ac2cd1e4-d5e3-485e-b6cd-5eac73366882)
