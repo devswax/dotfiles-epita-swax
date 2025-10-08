@@ -1,57 +1,53 @@
-# ~/.zshrc
+# =============================
+#  ~/.zshrc — Config Swax
+# =============================
 
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [ -d ~/afs/bin ] ; then
-    export PATH=~/afs/bin:$PATH
-fi
-
-if [ -d ~/.local/bin ] ; then
-    export PATH=~/.local/bin:$PATH
-fi
-
-export LANG=en_US.utf8
+export PATH="$HOME/.local/bin:$PATH"
+[ -d "$HOME/afs/bin" ] && export PATH="$HOME/afs/bin:$PATH"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export NNTPSERVER="news.epita.fr"
+export EDITOR=nvim
 
-export EDITOR=vim
-#export EDITOR=emacs
+alias ls='eza --icons --group-directories-first'
+alias la='eza -a --icons --group-directories-first'
+alias ll='eza -alF --icons --group-directories-first'
+alias grep='grep --color=auto -n'
+alias cat='bat --style=plain --paging=never'
 
-# Color support for less
-#export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
-#export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
-#export LESS_TERMCAP_me=$'\E[0m'           # end mode
-#export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
-#export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
-#export LESS_TERMCAP_ue=$'\E[0m'           # end underline
-#export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+command -v starship &>/dev/null && eval "$(starship init zsh)"
 
-alias ls='ls --color=auto'
-alias grep='grep --color -n'
-PS1='[\u@\h \W]\$ '
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+setopt HIST_IGNORE_DUPS SHARE_HISTORY
 
-if [[ $TERM = "xterm-kitty" ]]; then
-    # Enable the subsequent settings only in interactive sessions
-    case $- in
-    *i*) ;;
-    *) return ;;
-    esac
+autoload -Uz compinit
+compinit
 
-    # Preferred editor for local and remote sessions
-    if [[ -n $SSH_CONNECTION ]]; then
-        export EDITOR='vim'
-    else
-        export EDITOR='nvim'
-    fi
+source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-    export HISTSIZE=1000
-    export HISTFILESIZE=2000
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' format '%B%FCompleting %d%b%f'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select
+zstyle ':completion:*:descriptions' format "%B%d%b"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' verbose true
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-    # SDL
-    export SDL_VIDEODRIVER="wayland,x11"
-
-    # starship
-    export STARSHIP_CONFIG=~/.starship.toml
-
-    eval "$(starship init zsh)"
-fi
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#668e89,underline'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=#668e89,underline'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=#668e89'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#668e89'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#668e89'
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=#668e89'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#668e89'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#668e89'
+ZSH_HIGHLIGHT_STYLES[function]='fg=#668e89'
