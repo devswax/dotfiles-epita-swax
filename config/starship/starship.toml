@@ -1,10 +1,10 @@
-# Get editor completions based on the config schema
+# ===============================================
+#  ~/.config/starship/starship.toml — Config Swax
+# ===============================================
+
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Inserts a blank line between shell prompts
 add_newline = true
-
-# Timeout for commands executed by starship
 command_timeout = 500
 right_format = '$cmd_duration'
 
@@ -14,7 +14,7 @@ format = 'in [$duration]($style)'
 style = '#95aad5'
 
 [character]
-success_symbol = '[➜](bold #95aad5)' # #8abdb6
+success_symbol = '[➜](bold #95aad5)' #8abdb6
 error_symbol = '[➜](bold #B6090A)'
 
 [username]
