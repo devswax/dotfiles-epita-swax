@@ -1,4 +1,6 @@
-# ~/.bashrc
+# ===============================================
+#  ~/.bashrc — Config Swax
+# ===============================================
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -31,7 +33,6 @@ alias grep='grep --color -n'
 PS1='[\u@\h \W]\$ '
 
 # this if is only for hyprland (when you are on i3, you don't go in)
-
 if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
     packages=(
         nixpkgs#zsh
@@ -61,6 +62,10 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
         nixpkgs#swappy
         nixpkgs#slurp
         nixpkgs#wl-clipboard
+        nixpkgs#eza
+        nixpkgs#zsh-autosuggestions
+        nixpkgs#zsh-syntax-highlighting
+        nixpkgs#vscode
     )
 
     nix profile install --impure "${packages[@]}"
@@ -82,4 +87,3 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
   
     exec Hyprland || logout
 fi
-
