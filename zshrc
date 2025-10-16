@@ -15,7 +15,6 @@ alias ls='eza --icons --group-directories-first'
 alias la='eza -a --icons --group-directories-first'
 alias ll='eza -alF --icons --group-directories-first'
 alias grep='grep --color=auto -n'
-alias cat='bat --style=plain --paging=never'
 
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 command -v starship &>/dev/null && eval "$(starship init zsh)"
