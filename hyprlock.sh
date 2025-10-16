@@ -7,7 +7,7 @@ hyprlock &
 HYP_PID=$!
 
 (
-    sleep 60
+    sleep 3600
     if [ -f "$LOCKFILE" ] && ps -p $HYP_PID > /dev/null 2>&1; then
         "$LOGOUT_SCRIPT"
     fi
