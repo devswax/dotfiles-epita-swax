@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
-date +%s > "$HOME/afs/.confs/.locktime"
+LOCKFILE="$HOME/afs/.confs/.locktime"
+LOGOUT_SCRIPT="$HOME/afs/.confs/hyprlock_logout.sh"
+
+date +%s > "$LOCKFILE"
 hyprlock &
+HYP_PID=$!
+
 (
-    sleep 3600
-    if [ -f "$HOME/afs/.confs/.locktime" ]; then
-        "$HOME/afs/.confs/hyprlock_logout.sh"
+    sleep 60
+    if [ -f "$LOCKFILE" ] && ps -p $HYP_PID > /dev/null 2>&1; then
+        "$LOGOUT_SCRIPT"
     fi
 ) &
