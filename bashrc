@@ -66,6 +66,11 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
         nixpkgs#zsh-autosuggestions
         nixpkgs#zsh-syntax-highlighting
         nixpkgs#vscode
+        nixpkgs#intel-media-driver
+        nixpkgs#intel-vaapi-driver
+        nixpkgs#libvdpau-va-gl
+        nixpkgs#libva-utils
+        nixpkgs#parsec-bin
     )
 
     nix profile install --impure "${packages[@]}"

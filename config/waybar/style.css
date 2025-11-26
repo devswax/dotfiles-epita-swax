@@ -98,7 +98,7 @@ window#waybar {
   border: 1px solid @black;
 }
 
-#cpu, #memory, #disk, #custom-gpu-usage {
+#disk, #custom-gpu-usage {
 	color: #7f849c;
 	background: black;
   border-radius: 10px;
@@ -110,7 +110,7 @@ window#waybar {
   border: 1px solid @black;
 }
 
-#custom-hyprpicker, #bluetooth, #network, #pulseaudio, #backlight, #battery, #custom-notifications, #custom-power, #custom-screenshot_t {
+#custom-hyprpicker, #bluetooth, #network, #pulseaudio, #backlight, #battery, #custom-notifications, #custom-power, #custom-screenshot_t, #cpu, #memory {
 	color: #7f849c;
 	font-family: 'Symbols Nerd Font';
 	font-size: 10pt;
