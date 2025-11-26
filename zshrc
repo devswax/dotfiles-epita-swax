@@ -1,34 +1,70 @@
-# =============================
-#  ~/.zshrc — Config Swax
-# =============================
+#          _              
+#  _______| |__  _ __ ___ 
+# |_  / __| '_ \| '__/ __|
+#  / /\__ \ | | | | | (__ 
+# /___|___/_| |_|_|  \___|
+#
+# Welcome to my Hyprlock config by Swax
+# https://github.com/devswax
+
+
+#########################
+### INTERACTIVE CHECK ###
+#########################
 
 [[ $- != *i* ]] && return
 
+
+###################
+###  PATH SETUP ###
+###################
+
 export PATH="$HOME/.local/bin:$PATH"
 [ -d "$HOME/afs/bin" ] && export PATH="$HOME/afs/bin:$PATH"
+
+
+###########################
+### LOCALE AND ENCODING ###
+###########################
+
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export NNTPSERVER="news.epita.fr"
-export EDITOR=nvim
+export EDITOR=vim
 
-(only for me, for parsec)
-# to launch parsec with the fix
-# export LIBVA_DRIVER_NAME=iHD
-# export LIBVA_DRIVERS_PATH=/nix/store/sc91f1zs01by49y9z4qfcd01ba8nv5nz-intel-media-driver-25.1.4/lib/dri
 
-alias parsec="parsecd"
+###############
+### ALIASES ###
+###############
+
 alias ls='eza --icons --group-directories-first'
 alias la='eza -a --icons --group-directories-first'
 alias ll='eza -alF --icons --group-directories-first'
+alias cls='clear'
 alias grep='grep --color=auto -n'
+
+
+################
+### STARSHIP ###
+################
 
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 command -v starship &>/dev/null && eval "$(starship init zsh)"
+
+
+#########################
+### HISTORY SETTINGS ###
+#########################
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=50000
 SAVEHIST=50000
 setopt HIST_IGNORE_DUPS SHARE_HISTORY
+
+
+###############
+### PLUGINS ###
+###############
 
 autoload -Uz compinit
 compinit
@@ -56,3 +92,14 @@ ZSH_HIGHLIGHT_STYLES[redirection]='fg=#668e89'
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#668e89'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=#668e89'
 ZSH_HIGHLIGHT_STYLES[function]='fg=#668e89'
+
+
+############################
+### PARSEC (only for me) ###
+############################
+
+if command -v parsecd >/dev/null 2>&1; then
+    export LIBVA_DRIVER_NAME=iHD
+    export LIBVA_DRIVERS_PATH=/nix/store/sc91f1zs01by49y9z4qfcd01ba8nv5nz-intel-media-driver-25.1.4/lib/dri
+    alias parsec="parsecd"
+fi
