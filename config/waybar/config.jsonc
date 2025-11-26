@@ -219,7 +219,7 @@
     "custom/power": {
           "format": " 󰐥 ",
           "tooltip": false,
-          "on-click": "shutdown now"
+          "on-click": "~/.config/wofi/scripts/powermenu.sh"
       },
 
     /*"custom/weather": {
