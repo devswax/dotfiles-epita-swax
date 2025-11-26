@@ -11,9 +11,10 @@ export LC_ALL=en_US.UTF-8
 export NNTPSERVER="news.epita.fr"
 export EDITOR=nvim
 
+(only for me, for parsec)
 # to launch parsec with the fix
-export LIBVA_DRIVER_NAME=iHD
-export LIBVA_DRIVERS_PATH=/nix/store/sc91f1zs01by49y9z4qfcd01ba8nv5nz-intel-media-driver-25.1.4/lib/dri
+# export LIBVA_DRIVER_NAME=iHD
+# export LIBVA_DRIVERS_PATH=/nix/store/sc91f1zs01by49y9z4qfcd01ba8nv5nz-intel-media-driver-25.1.4/lib/dri
 
 alias parsec="parsecd"
 alias ls='eza --icons --group-directories-first'
