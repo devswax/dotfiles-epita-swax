@@ -1,7 +1,7 @@
-# Hyprland + NixOS Configuration for EPITA by Swax
+# my dotfiles for NixPIE at EPITA
 
-This repository contains my **Hyprland** setup for **NixOS** at EPITA.  
-Follow the instructions below to set it up correctly.
+this repository contains my Hyprland setup for NixOS at EPITA.  
+follow the instructions below to set it up correctly.
 
 ---
 
@@ -17,71 +17,71 @@ Follow the instructions below to set it up correctly.
 
 ---
 
-## Installation (First Time)
+## installation (first time)
 
-Follow these steps to install the configuration for the first time:
+follow these steps to install the configuration for the first time:
 
-### Step 1: Switch to a TTY
-- Change your TTY (e.g., switch to `tty1` using `Ctrl + Alt + F1`, if you want switch back to i3 use `Ctrl + Alt + F2`).
-- Log in to your **Forge ID** account.
+### step 1: switch to a TTY
+- change your TTY (e.g., switch to `tty1` using `Ctrl + Alt + F1`, if you want switch back to i3 use `Ctrl + Alt + F2`).
+- log in to your **Forge ID** account.
 
-### Step 2: Clone the Repository
-Run the following command:
+### step 2: clone the Repository
+run the following command:
 ```sh
 git clone https://github.com/devswax/dotfiles-epita-swax.git
 ```
 
-### Step 3: Copy Configuration Files
+### step 3: copy configuration files
 ```sh
 cp -r dotfiles-epita-swax/* ~/afs/.confs/
 ```
 
-### Step 4: Install the Configuration
+### step 4: launch the configuration
 ```sh
 bash
 ```
 
 ---
 
-## Every Boot
+## every boot
 
-Each time you reboot, follow these steps to apply the configuration:
+each time you reboot, follow these steps to apply the configuration:
 
-### Step 1: Switch to a TTY
-- Change your TTY (e.g., `tty1` with `Ctrl + Alt + F1`).
-- Log in to your **Forge ID** account.
+### step 1: switch to a TTY
+- change your TTY (e.g., `tty1` with `Ctrl + Alt + F1`).
+- log in to your **Forge ID** account.
 
-### Step 2: Apply the Configuration
+### step 2: launch the configuration
 ```sh
 bash
 ```
 
 ---
 
-## Reset
+## reset
 
-If you want to erase the configuration do:
+if you want to erase the configuration do:
 
-### Step 1: Switch to a TTY (You must not be logged into i3!)
-- Change your TTY (e.g., `tty1` with `Ctrl + Alt + F1`).
-- Log in to your **Forge ID** account.
+### step 1: switch to a TTY (you must not be logged into i3!)
+- change your TTY (e.g., `tty1` with `Ctrl + Alt + F1`).
+- log in to your **Forge ID** account.
 
-### Step 2: Reset the Configuration
+### step 2: reset the configuration
 ```sh
 rm -rf ~/afs/.confs/*
 cp -r /afs/cri.epita.fr/resources/confs/* ~/afs/.confs/
 ```
-### Step 3: Switch to i3
-- Change your TTY (i.e., `tty2` with `Ctrl + Alt + F2`).
-- Log in again using your **Forge ID** account.
+### step 3: switch to i3
+- change your TTY (i.e., `tty2` with `Ctrl + Alt + F2`).
+- log in again using your **Forge ID** account.
 
 
 ---
 
-## Keybindings
+## keybindings
 
-### General
-| Shortcut        | Action |
+### general
+| shortcut        | action |
 |-----------------|--------|
 | SUPER + Enter   | Open terminal (kitty) |
 | SUPER + Q       | Close active window |
@@ -96,30 +96,30 @@ cp -r /afs/cri.epita.fr/resources/confs/* ~/afs/.confs/
 | SUPER + L       | Lock session via `~/afs/.confs/hyprlock.sh` (must always be used instead of hyprlock directly) |
 | Print           | Take screenshot (grim + slurp + swappy) |
 
-### Mouse
-| Shortcut                | Action |
+### mouse
+| shortcut                | action |
 |-------------------------|--------|
 | SUPER + LMB (drag)      | Move window |
 | SUPER + RMB (drag)      | Resize window |
 | SUPER + Scroll ↑ / ↓    | Switch workspace |
 
-### Workspaces
-| Shortcut                | Action |
+### workspaces
+| shortcut                | action |
 |-------------------------|--------|
 | SUPER + [1-9,0]         | Switch to workspace 1-10 |
 | SUPER + SHIFT + [1-9,0] | Move active window to workspace 1-10 |
 | SUPER + S               | Toggle special workspace magic |
 | SUPER + SHIFT + S       | Move active window to special workspace magic |
 
-### Navigation
-| Shortcut                | Action |
+### navigation
+| shortcut                | action |
 |-------------------------|--------|
 | SUPER + ← / ↑ / ↓ / →   | Move focus between windows |
 
 
 ---
 
-## Preview
+## preview
 ![image](https://github.com/user-attachments/assets/d9f397a9-18df-4257-9ea5-b398a0da6e46)
 ![image](https://github.com/user-attachments/assets/02c07110-d331-4b3e-9b7e-e41dbfe17e91)
 ![image](https://github.com/user-attachments/assets/ac2cd1e4-d5e3-485e-b6cd-5eac73366882)
