@@ -10,7 +10,7 @@ case $selected in
   lock)
     ~/afs/.confs/hyprlock.sh;;
   reboot)
-    exec reboot;;
+    exec systemctl reboot -i;;
   shutdown)
-    exec poweroff -i;;
+    exec systemctl poweroff -i;;
 esac
