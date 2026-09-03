@@ -90,5 +90,5 @@ if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]]; then
     USER_NAME=$(basename "$HOME")
     sed -i "s|/home/user.name|/home/$USER_NAME|g" ~/afs/.confs/config/gtk-3.0/bookmarks
   
-    exec Hyprland || logout
+    exec start-hyprland || logout
 fi
