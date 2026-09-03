@@ -99,7 +99,5 @@ ZSH_HIGHLIGHT_STYLES[function]='fg=#668e89'
 ############################
 
 if command -v parsecd >/dev/null 2>&1; then
-    export LIBVA_DRIVER_NAME=iHD
-    export LIBVA_DRIVERS_PATH=/nix/store/sc91f1zs01by49y9z4qfcd01ba8nv5nz-intel-media-driver-25.1.4/lib/dri
-    alias parsec="parsecd"
+    alias parsec='export LIBVA_DRIVER_NAME=iHD; export LIBVA_DRIVERS_PATH=$(dirname $(find /nix/store -path "*/lib/dri/iHD_drv_video.so" 2>/dev/null | head -1)); vainfo --display drm --device /dev/dri/renderD128; parsecd'
 fi
