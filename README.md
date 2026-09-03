@@ -91,8 +91,6 @@ cp -r /afs/cri.epita.fr/resources/confs/* ~/afs/.confs/
 | SUPER + D       | Application launcher (wofi) |
 | SUPER + V       | Toggle floating mode |
 | SUPER + F       | Fullscreen |
-| SUPER + P       | Enable pseudo-tiling (dwindle) |
-| SUPER + J       | Toggle split (dwindle) |
 | SUPER + L       | Lock session via `~/afs/.confs/hyprlock.sh` (must always be used instead of hyprlock directly) |
 | Print           | Take screenshot (grim + slurp + swappy) |
 
