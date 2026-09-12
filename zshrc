@@ -4,7 +4,7 @@
 #  / /\__ \ | | | | | (__ 
 # /___|___/_| |_|_|  \___|
 #
-# Welcome to my Hyprlock config by Swax
+# Welcome to my Zsh config by Swax
 # https://github.com/devswax
 
 
